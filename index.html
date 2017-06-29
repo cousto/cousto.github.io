@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Typed coreR.</title>
+    <link rel="stylesheet" type="text/css" href="codemirror.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+  <body>
+    <div class="holder">
+      <h1>Typed coreR.</h1>
+
+      <p>
+	We are seeking for a system that would provide both
+	static informations and a <strong>safe way</strong> to gradually
+	define a program that could contain free variables.
+	We consider free variables as <em>effects</em> whose role is to
+	statically analyse when the user defines a computation that would be
+	stuck because of a free variable.
+	We consider simple assignements, super assignements and free variables
+	as effects. Effects can be propagated, composed etc..
+	<br>
+	Effects allow us to distinguish between: <br>
+	- <strong>pure</strong> programs:
+	those that do not contain free variables.<br>
+	- <strong>semi-pure</strong> programs:
+	those that contain free variables but their evaluation is not stuck.
+	<br>
+	- <strong>stuck</strong> programs:
+	those that contain free variables and their evaluation is stuck.
+	<br>
+      </p>
+
+      <p>
+        Examples:
+        <a href="#" id="base">Simple</a>
+	<a href="#" id="super0">Super0</a>
+	<a href="#" id="propagation1">Propagation1</a>
+	<a href="#" id="propagation2">Propagation2</a>
+	<a href="#" id="even_odd">Even/Odd</a>
+	<a href="#" id="rec_f">Rec</a>
+	<a href="#" id="update0">Update0</a>
+      </p>
+
+
+      <div class="box">
+        <textarea id="input">
+        </textarea>
+        <div id="error"></div>
+      </div>
+
+      <div class="buttons">
+        <button id="load">Type check</button>
+      </div>
+
+      <div class="box">
+        <div class="cm-s-default">
+          Simple:<pre id="box_simples"></pre>
+        </div>
+        <div class="cm-s-default">
+          Mandatory:<pre id="box_mandatories"></pre>
+        </div>
+        <div class="cm-s-default">
+          Super:<pre id="box_super"></pre>
+        </div>
+        <div class="cm-s-default">
+          Return type:<pre id="box_rty"></pre>
+        </div>
+      </div>
+
+      <div class="footer">
+        Powered by OCaml and js_of_ocaml.
+      </div>
+
+    </div>
+
+    <script type="text/javascript" src="codemirror.js"></script>
+    <script type="text/javascript" src="simple.js"></script>
+    <script type="text/javascript" src="matchbrackets.js"></script>
+    <script type="text/javascript" src="runmode.js"></script>
+    <script type="text/javascript" src="toplevel.js"></script>
+    <script type="text/javascript" src="web.js"></script>
+
+  </body>
+</html>
