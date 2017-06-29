@@ -86,7 +86,7 @@
 	<pre>
 	  e ::= x | e (e) | e @ ty (e)
               | fun () : ty {e} | fun (x : ty) : ty {e}
-	      | assign (x,ty,e) | ^assign (x,ty,e)
+	      | assign (x,?(ty,)e) | ^assign (x,?(ty,)e)
 	      | e ; e
 
 	  ty ::= float | string | unit | ty -> ty
