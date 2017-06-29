@@ -1,8 +1,8 @@
 CodeMirror.defineSimpleMode("rtop", {
     start: [
-	{regex: /assign|fun|fun/, token: "keyword"},
+	{regex: /<-|<<-|fun/, token: "keyword"},
 	{regex: /true|false|@/, token: "atom"},
-	{regex: /unit|float/, token: "type"}
+	{regex: /->|unit|string|bool|float/, token: "type"}
     ]
 });
 
